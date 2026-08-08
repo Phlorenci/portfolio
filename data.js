@@ -50,6 +50,7 @@ const SOCIALS = [
 ];
 
 const PROFILE = {
+  avatarUrl: "assets/profilephoto.jpg", // put a path like "assets/photo.jpg" here once you have one
   name: "Bobur Mirzarakhimov",
   tagline: "Computer Engineering Student | Cybersecurity & Systems Enthusiast",
   location: "Seoul, South Korea",

@@ -102,6 +102,13 @@ function setupResumeButton() {
   }
 }
 
+function setupAvatar() {
+  const wrap = document.getElementById("hero-avatar");
+  if (PROFILE.avatarUrl) {
+    wrap.innerHTML = `<img src="${PROFILE.avatarUrl}" alt="${PROFILE.name}">`;
+  }
+}
+
 /* =========================================================
    NAV: scroll shadow, active link highlight, mobile toggle
    ========================================================= */
@@ -266,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   renderSocials();
   setupResumeButton();
+  setupAvatar();
   setupNav();
   setupReveal();
   setupTypewriter();
