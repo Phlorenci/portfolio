@@ -7,12 +7,14 @@
 <meta name="description" content="Portfolio of Bobur Mirzarakhimov, Computer Engineering student at Sejong University, focused on cybersecurity and systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<canvas id="bg-canvas"></canvas>
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
 <!-- ============ NAV ============ -->
 <nav id="navbar">
@@ -36,33 +38,36 @@
 <!-- ============ HERO ============ -->
 <header id="hero">
   <div class="hero-inner">
-    <div class="hero-avatar">
-      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="49" stroke="var(--accent)" stroke-width="1" opacity="0.4"/>
-        <circle cx="50" cy="36" r="16" stroke="var(--accent)" stroke-width="2"/>
-        <path d="M20 86c3-18 15-28 30-28s27 10 30 28" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+  <div class="terminal-window">
+    <div class="terminal-bar">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
+      <span class="terminal-title">bobur@root: ~</span>
     </div>
-
-    <p class="hero-eyebrow">// <span id="typed-role">initializing profile</span></p>
-    <h1 class="hero-name">Bobur Mirzarakhimov</h1>
-    <p class="hero-tagline">Computer Engineering Student <span class="pipe">|</span> Cybersecurity &amp; Systems Enthusiast</p>
-
-    <div class="hero-location">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span>Seoul, South Korea</span>
-    </div>
-
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#" id="resume-btn" class="btn btn-ghost" aria-disabled="true">Download Resume</a>
-    </div>
-
-    <div class="hero-scroll-hint">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
+    <div class="terminal-body">
+      <p class="terminal-line"><span class="prompt">$</span> whoami</p>
+      <h1 class="hero-name">Bobur Mirzarakhimov</h1>
+      <p class="hero-tagline">Computer Engineering Student <span class="pipe">|</span> Cybersecurity &amp; Systems Enthusiast</p>
+      <p class="terminal-line"><span class="prompt">$</span> cat status.txt</p>
+      <p class="hero-eyebrow"><span id="typed-role"></span><span class="cursor-blink">_</span></p>
+      <div class="hero-location">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Seoul, South Korea</span>
+      </div>
     </div>
   </div>
+
+  <div class="hero-cta">
+    <a href="#projects" class="btn btn-primary magnetic">View Projects</a>
+    <a href="#" id="resume-btn" class="btn btn-ghost magnetic" aria-disabled="true">Download Resume</a>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</div>
 </header>
 
 <main>

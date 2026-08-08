@@ -226,66 +226,35 @@ function setupContactForm() {
   });
 }
 
-/* =========================================================
-   BACKGROUND: subtle animated network grid
-   ========================================================= */
-function setupCanvas() {
-  const canvas = document.getElementById("bg-canvas");
-  const ctx = canvas.getContext("2d");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let w, h, nodes = [];
+function setupCursorGlow() {
+  const glow = document.getElementById("cursor-glow");
+  if (!glow || window.matchMedia("(hover: none)").matches) return;
+  window.addEventListener("mousemove", e => {
+    glow.style.setProperty("--x", `${e.clientX}px`);
+    glow.style.setProperty("--y", `${e.clientY}px`);
+  }, { passive: true });
+}
 
-  const ACCENT = "43, 233, 200";
-  const NODE_COUNT_DIVISOR = 16000;
-
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-    const count = Math.min(70, Math.floor((w * h) / NODE_COUNT_DIVISOR));
-    nodes = Array.from({ length: count }, () => ({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25
-    }));
-  }
-
-  function step() {
-    ctx.clearRect(0, 0, w, h);
-    nodes.forEach(n => {
-      n.x += n.vx; n.y += n.vy;
-      if (n.x < 0 || n.x > w) n.vx *= -1;
-      if (n.y < 0 || n.y > h) n.vy *= -1;
+function setupMagnetic() {
+  document.querySelectorAll(".magnetic").forEach(btn => {
+    btn.addEventListener("mousemove", e => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
     });
+    btn.addEventListener("mouseleave", () => { btn.style.transform = "translate(0,0)"; });
+  });
+}
 
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const dx = nodes[i].x - nodes[j].x;
-        const dy = nodes[i].y - nodes[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 140) {
-          ctx.strokeStyle = `rgba(${ACCENT}, ${0.12 * (1 - dist / 140)})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-    nodes.forEach(n => {
-      ctx.fillStyle = `rgba(${ACCENT}, 0.5)`;
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, 1.4, 0, Math.PI * 2);
-      ctx.fill();
+function setupCardGlow() {
+  document.querySelectorAll(".skill-card, .cert-card, .project-card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+      card.style.setProperty("--my", `${e.clientY - r.top}px`);
     });
-
-    if (!reduceMotion) requestAnimationFrame(step);
-  }
-
-  resize();
-  window.addEventListener("resize", resize);
-  step();
+  });
 }
 
 /* =========================================================
@@ -301,6 +270,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setupReveal();
   setupTypewriter();
   setupContactForm();
-  setupCanvas();
+  setupCursorGlow();
+  setupMagnetic();
+  setupCardGlow();
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 });
