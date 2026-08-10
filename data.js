@@ -7,15 +7,30 @@
 const SKILLS = [
   {
     category: "Languages & Tools",
-    items: ["Python", "C", "Git", "Linux"]
+    items: [
+      { name: "Python", icon: "devicon-python-plain colored" },
+      { name: "C", icon: "devicon-c-plain colored" },
+      { name: "Git", icon: "devicon-git-plain colored" },
+      { name: "Linux", icon: "devicon-linux-plain colored" }
+    ]
   },
   {
     category: "Security & Systems",
-    items: ["Cybersecurity Fundamentals", "Operating Systems", "Computer Networks"]
+    items: [
+      { name: "Cybersecurity Fundamentals", icon: "assets/icon2.png" },
+      { name: "Operating Systems", icon: "os" },
+      { name: "Computer Networks", icon: "network" }
+    ]
   },
   {
     category: "Other Coursework",
-    items: ["MATLAB", "Wireless Communication", "AI", "Web Programming & Development"]
+    items: [
+      { name: "MATLAB", icon: "devicon-matlab-plain colored" },
+      { name: "Wireless Communication", icon: "wifi" },
+      { name: "AI", icon: "brain" },
+      { name: "Web Programming & Development", icon: "devicon-html5-plain colored" },
+      { name: "SQL", icon: "devicon-mysql-plain colored" }
+    ]
   }
 ];
 
@@ -23,12 +38,17 @@ const CERTIFICATIONS = [
   {
     title: "Introduction to Cybersecurity",
     issuer: "Cisco Networking Academy",
-    date: "",
+    date: "Aug 8, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "shield"
+    icon: "assets/icon1.png"
+  },
+  {
+    title: "Cybersecurity Fundamentals",
+    issuer: "Cisco Networking Academy",
+    date: "Aug 9, 2026",
+    link: "https://www.credly.com/users/bobur-mirzarakhimov",
+    icon: "assets/icon2.png"
   }
-  // Add more certifications here, e.g.:
-  // { title: "CompTIA Security+", issuer: "CompTIA", date: "2026", link: "#", icon: "shield" }
 ];
 
 const PROJECTS = [

@@ -7,7 +7,11 @@ const ICONS = {
   linkedin: `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02ZM3.3 8.75h3.6V21H3.3V8.75Zm6.28 0h3.45v1.68h.05c.48-.9 1.65-1.85 3.4-1.85 3.64 0 4.31 2.4 4.31 5.52V21h-3.6v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V21H9.58V8.75Z"/></svg>`,
   leetcode: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 3 6 10l7 7"/><path d="M9.5 13.5h9"/><path d="M12 19.5c-1.5 1.5-4 1.5-5.5 0s-1.5-4 0-5.5"/></svg>`,
   instagram: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>`,
-  external: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>`
+  external: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>`,
+  os: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>`,
+  network: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v6M12 13 6.5 17.5M12 13l5.5 4.5"/></svg>`,
+  wifi: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13a10 10 0 0 1 14 0M8.5 16.5a5 5 0 0 1 7 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg>`,
+  brain: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 3a3 3 0 0 0-3 3v1a3 3 0 0 0-2 5 3 3 0 0 0 2 5v.5a3 3 0 0 0 3 3M14.5 3a3 3 0 0 1 3 3v1a3 3 0 0 1 2 5 3 3 0 0 1-2 5v.5a3 3 0 0 1-3 3M9.5 3v17M14.5 3v17"/></svg>`,
 };
 
 /* =========================================================
@@ -19,7 +23,12 @@ function renderSkills() {
     <div class="skill-card">
       <h3>${group.category}</h3>
       <ul class="skill-tags">
-        ${group.items.map(item => `<li>${item}</li>`).join("")}
+        ${group.items.map(item => `
+          <li>
+            <span class="skill-icon">${item.icon.startsWith("devicon") ? `<i class="${item.icon}"></i>` : ICONS[item.icon] || ""}</span>
+            ${item.name}
+          </li>
+        `).join("")}
       </ul>
     </div>
   `).join("");
