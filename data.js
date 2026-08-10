@@ -36,7 +36,7 @@ const CERTIFICATIONS = [
   },
   {
     title: "Cybersecurity Fundamentals",
-    issuer: "Cisco Networking Academy",
+    issuer: "IBM SkillsBuild",
     date: "Aug 9, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
     icon: "assets/icon2.png"
