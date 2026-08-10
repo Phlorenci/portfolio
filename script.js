@@ -43,18 +43,24 @@ function renderCertifications() {
     grid.innerHTML = `<div class="placeholder-card"><p>No certifications listed yet.</p></div>`;
     return;
   }
-  grid.innerHTML = CERTIFICATIONS.map(cert => `
-    <div class="cert-card">
-      <div class="cert-icon">${ICONS[cert.icon] || ICONS.shield}</div>
-      <div class="cert-body">
-        <h3>${cert.title}</h3>
-        <p>${cert.issuer}${cert.date ? " · " + cert.date : ""}</p>
-        <a class="cert-link" href="${cert.link}" target="_blank" rel="noopener noreferrer">
-          View credential ${ICONS.external}
-        </a>
+  grid.innerHTML = CERTIFICATIONS.map(cert => {
+    const isImage = /\.(png|jpg|jpeg|svg|webp)$/i.test(cert.icon);
+    const iconHtml = isImage
+      ? `<img src="${cert.icon}" alt="${cert.title} badge">`
+      : (ICONS[cert.icon] || ICONS.shield);
+    return `
+      <div class="cert-card">
+        <div class="cert-icon">${iconHtml}</div>
+        <div class="cert-body">
+          <h3>${cert.title}</h3>
+          <p>${cert.issuer}${cert.date ? " · " + cert.date : ""}</p>
+          <a class="cert-link" href="${cert.link}" target="_blank" rel="noopener noreferrer">
+            View credential ${ICONS.external}
+          </a>
+        </div>
       </div>
-    </div>
-  `).join("");
+    `;
+  }).join("");
 }
 
 /* =========================================================

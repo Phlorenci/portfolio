@@ -11,25 +11,17 @@ const SKILLS = [
       { name: "Python", icon: "devicon-python-plain colored" },
       { name: "C", icon: "devicon-c-plain colored" },
       { name: "Git", icon: "devicon-git-plain colored" },
-      { name: "Linux", icon: "devicon-linux-plain colored" }
+      { name: "Linux", icon: "devicon-linux-plain colored" },
+      { name: "MATLAB", icon: "devicon-matlab-plain colored" },
+      { name: "SQL", icon: "devicon-mysql-plain colored" }
     ]
   },
   {
     category: "Security & Systems",
     items: [
-      { name: "Cybersecurity Fundamentals", icon: "assets/icon2.png" },
+      { name: "Cybersecurity Fundamentals", icon: "shield" },
       { name: "Operating Systems", icon: "os" },
       { name: "Computer Networks", icon: "network" }
-    ]
-  },
-  {
-    category: "Other Coursework",
-    items: [
-      { name: "MATLAB", icon: "devicon-matlab-plain colored" },
-      { name: "Wireless Communication", icon: "wifi" },
-      { name: "AI", icon: "brain" },
-      { name: "Web Programming & Development", icon: "devicon-html5-plain colored" },
-      { name: "SQL", icon: "devicon-mysql-plain colored" }
     ]
   }
 ];

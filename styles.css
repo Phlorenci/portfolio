@@ -436,6 +436,11 @@ main { position: relative; z-index: 1; }
   background: var(--accent-dim);
   color: var(--accent);
   display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.cert-icon img {
+  width: 100%; height: 100%;
+  object-fit: cover;
 }
 .cert-body h3 { margin: 0 0 4px; font-size: 0.98rem; }
 .cert-body p { margin: 0 0 10px; color: var(--text-muted); font-size: 0.85rem; }
