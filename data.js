@@ -44,14 +44,15 @@ const CERTIFICATIONS = [
 ];
 
 const PROJECTS = [
-  // Empty for now — when ready, add objects like:
-  // {
-  //   title: "Project Name",
-  //   description: "One or two lines on what it does and why it exists.",
-  //   stack: ["Python", "Linux"],
-  //   repo: "https://github.com/Phlorenci/project-name",
-  //   demo: ""
-  // }
+  {
+    title: "UzBank Shield",
+    logo: "assets/projectlogo1.svg",
+    goal: "Give everyday users in Uzbekistan a way to sanity-check a banking or payment page before they type in a password — catching a domain that's one character off from real, before that character costs them their account.",
+    output: "A terminal + desktop (PySide6) scanning engine that verifies domains against Uzbekistan's official bank/payment registry, flags typosquatting and suspicious TLDs, inspects SSL/WHOIS, scans payment pages for card-stealing forms, reads QR & barcodes live via webcam, and flags scam SMS/emails — fully localized in English, Russian, and Uzbek, backed by 66+ unit tests.",
+    stack: ["Python", "PySide6", "Rich", "pytest", "SSL/WHOIS Analysis", "OpenAI API"],
+    repo: "https://github.com/Phlorenci/UzBank-Shield",
+    demo: ""
+  }
 ];
 
 const SOCIALS = [

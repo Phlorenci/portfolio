@@ -78,15 +78,13 @@ function renderProjects() {
       </a>`;
     return;
   }
-  grid.innerHTML = PROJECTS.map(p => `
-    <div class="project-card">
-      <h3>${p.title}</h3>
-      <p>${p.description}</p>
-      <div class="project-tags">${(p.stack || []).map(t => `<span>${t}</span>`).join("")}</div>
-      <div class="project-links">
-        ${p.repo ? `<a href="${p.repo}" target="_blank" rel="noopener noreferrer">Repo →</a>` : ""}
-        ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener noreferrer" style="margin-left:12px;">Live →</a>` : ""}
+  grid.classList.add("projects-showcase");
+  grid.innerHTML = PROJECTS.map((p, i) => `
+    <div class="project-showcase-card" data-index="${i}">
+      <div class="project-logo-wrap">
+        ${p.logo ? `<img src="${p.logo}" alt="${p.title} logo" class="project-logo">` : ""}
       </div>
+      <h3 class="project-name">${p.title}</h3>
     </div>
   `).join("");
 }
@@ -279,6 +277,121 @@ function setupCardGlow() {
   });
 }
 
+function setupProjectExpand() {
+  document.querySelectorAll(".project-showcase-card").forEach(card => {
+    let placeholder = null;
+
+    function expand() {
+      if (placeholder) return; // already expanded
+      const rect = card.getBoundingClientRect();
+
+      placeholder = document.createElement("div");
+      placeholder.style.width = rect.width + "px";
+      placeholder.style.height = rect.height + "px";
+      card.parentNode.insertBefore(placeholder, card);
+
+      Object.assign(card.style, {
+        position: "fixed",
+        top: rect.top + "px",
+        left: rect.left + "px",
+        width: rect.width + "px",
+        height: rect.height + "px",
+        margin: "0",
+        zIndex: "300"
+      });
+      card.classList.add("is-expanding");
+      document.body.style.overflow = "hidden";
+
+      card.offsetHeight; // force reflow so the browser registers the start position
+
+      requestAnimationFrame(() => {
+        Object.assign(card.style, { top: "0px", left: "0px", width: "100vw", height: "100vh" });
+        card.classList.add("is-expanded");
+      });
+    }
+
+    function collapse() {
+      if (!placeholder) return;
+      const rect = placeholder.getBoundingClientRect();
+      card.classList.remove("is-expanded");
+      Object.assign(card.style, {
+        top: rect.top + "px",
+        left: rect.left + "px",
+        width: rect.width + "px",
+        height: rect.height + "px"
+      });
+      document.body.style.overflow = "";
+
+      const cleanup = (e) => {
+        if (e.propertyName !== "width") return;
+        card.style.cssText = "";
+        card.classList.remove("is-expanding");
+        placeholder.remove();
+        placeholder = null;
+        card.removeEventListener("transitionend", cleanup);
+      };
+      card.addEventListener("transitionend", cleanup);
+    }
+
+    card.addEventListener("mouseenter", expand);
+    card.addEventListener("mouseleave", collapse);
+    card.querySelector(".project-close")?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      collapse();
+    });
+  });
+}
+
+function setupProjectOverlay() {
+  const overlay = document.getElementById("project-overlay");
+  const inner = document.getElementById("overlay-inner");
+  const closeBtn = document.getElementById("project-overlay-close");
+  const cards = document.querySelectorAll(".project-showcase-card");
+
+  function renderOverlay(p) {
+    inner.innerHTML = `
+      <div class="overlay-face">
+        <div class="overlay-logo-wrap">
+          ${p.logo ? `<img src="${p.logo}" alt="${p.title} logo">` : ""}
+        </div>
+        <h3>${p.title}</h3>
+      </div>
+      <div class="overlay-details">
+        ${p.goal ? `<div class="meta-row"><span class="meta-label">Goal</span><p>${p.goal}</p></div>` : ""}
+        ${p.output ? `<div class="meta-row"><span class="meta-label">Output</span><p>${p.output}</p></div>` : ""}
+        <div class="project-tags">${(p.stack || []).map(t => `<span>${t}</span>`).join("")}</div>
+        <div class="project-links">
+          ${p.repo ? `<a href="${p.repo}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Repository →</a>` : ""}
+        </div>
+      </div>
+    `;
+  }
+
+  function open(index) {
+    renderOverlay(PROJECTS[index]);
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function close() {
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  cards.forEach(card => {
+    const index = Number(card.dataset.index);
+    card.addEventListener("click", () => open(index));
+  });
+
+  overlay.addEventListener("click", e => {
+    if (e.target === overlay) close(); // click the dark backdrop area to close
+  });
+  closeBtn.addEventListener("click", close);
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+}
+
 /* =========================================================
    INIT
    ========================================================= */
@@ -296,5 +409,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCursorGlow();
   setupMagnetic();
   setupCardGlow();
+  setupProjectOverlay();
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 });
