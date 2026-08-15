@@ -14,10 +14,13 @@ const ICONS = {
   brain: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 3a3 3 0 0 0-3 3v1a3 3 0 0 0-2 5 3 3 0 0 0 2 5v.5a3 3 0 0 0 3 3M14.5 3a3 3 0 0 1 3 3v1a3 3 0 0 1 2 5 3 3 0 0 1-2 5v.5a3 3 0 0 1-3 3M9.5 3v17M14.5 3v17"/></svg>`,
   tableau: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M12 3v18M4 8h16M4 16h16M8 3v6M16 3v6M8 15v6M16 15v6"/></svg>`,
   clang: `<svg width="18" height="18" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#4d8dff"/>
-    <polygon points="20,2 36,11 20,20 4,11" fill="#7fa8ff"/>
+    <polygon points="20,2 36,11 36,29 20,38 4,29 4,11" fill="#0044baff"/>
+    <polygon points="20,2 36,11 20,20 4,11" fill="#0044baff"/>
     <text x="20" y="28" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#fff" text-anchor="middle">C</text>
   </svg>`,
+  reddit: `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.09c0-1.1-.9-2-2-2-.53 0-1 .2-1.36.53-1.34-.94-3.17-1.55-5.2-1.62l.98-3.1 2.7.63a1.5 1.5 0 1 0 .15-.98l-3.13-.73a.5.5 0 0 0-.59.34l-1.13 3.58c-2.09.05-3.98.66-5.35 1.62A1.98 1.98 0 0 0 4 12.09c0 .78.42 1.46 1.05 1.83a3.2 3.2 0 0 0-.05.55c0 2.5 3.13 4.53 7 4.53s7-2.03 7-4.53c0-.18-.02-.36-.05-.54A2 2 0 0 0 22 12.09Zm-13.5 1.5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0Zm7.44 3.02c-.86.61-2.02.87-2.94.87s-2.08-.26-2.94-.87a.4.4 0 0 1 .47-.65c.68.49 1.65.7 2.47.7s1.79-.21 2.47-.7a.4.4 0 1 1 .47.65Zm-.19-1.77a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/></svg>`,
+  chess: `<svg width="18" height="18" viewBox="0 0 24 24"><text x="12" y="18" font-size="19" text-anchor="middle" fill="currentColor">♞</text></svg>`,
+  credly: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5.5v6c0 5 3.4 8.7 8 9.5 4.6-.8 8-4.5 8-9.5v-6L12 2Z"/><path d="m9 12 2 2 4-4"/></svg>`,
 };
 
 /* =========================================================
@@ -93,6 +96,64 @@ function renderProjects() {
       <h3 class="project-name">${p.title}</h3>
     </div>
   `).join("");
+}
+
+/* =========================================================
+   RENDER: BLOG
+   ========================================================= */
+function renderBlog() {
+  const grid = document.getElementById("blog-grid");
+  if (!BLOG_POSTS.length) {
+    grid.innerHTML = `<div class="placeholder-card"><p>No entries yet — writing in progress.</p></div>`;
+    return;
+  }
+  grid.innerHTML = BLOG_POSTS.map((post, i) => `
+    <div class="blog-card" data-index="${i}">
+      <p class="blog-card-date">${post.date}</p>
+      <h3>${post.title}</h3>
+      <p class="blog-card-excerpt">${post.excerpt}</p>
+      <div class="project-tags">${(post.tags || []).map(t => `<span>${t}</span>`).join("")}</div>
+    </div>
+  `).join("");
+}
+
+function setupBlogOverlay() {
+  const grid = document.getElementById("blog-grid");
+  const overlay = document.getElementById("blog-overlay");
+  const closeBtn = document.getElementById("blog-overlay-close");
+  const dateEl = document.getElementById("blog-post-date");
+  const bodyEl = document.getElementById("blog-post-body");
+
+  async function open(index) {
+    const post = BLOG_POSTS[index];
+    dateEl.textContent = post.date;
+    bodyEl.innerHTML = "<p>Loading…</p>";
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+
+    try {
+      const res = await fetch(post.file);
+      const md = await res.text();
+      bodyEl.innerHTML = window.marked ? marked.parse(md) : md;
+    } catch {
+      bodyEl.innerHTML = "<p>Couldn't load this post. Check the file path in data.js.</p>";
+    }
+  }
+
+  function close() {
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  grid.addEventListener("click", e => {
+    const card = e.target.closest(".blog-card");
+    if (card) open(Number(card.dataset.index));
+  });
+  overlay.addEventListener("click", e => { if (e.target === overlay) close(); });
+  closeBtn.addEventListener("click", close);
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
 }
 
 /* =========================================================
@@ -405,6 +466,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSkills();
   renderCertifications();
   renderProjects();
+  renderBlog();
   renderSocials();
   setupResumeButton();
   setupAvatar();
@@ -416,5 +478,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMagnetic();
   setupCardGlow();
   setupProjectOverlay();
+  setupBlogOverlay();
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 });

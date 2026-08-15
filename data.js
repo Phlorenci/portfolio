@@ -66,11 +66,31 @@ const PROJECTS = [
   }
 ];
 
+const BLOG_POSTS = [
+  {
+    title: "Phishing, and What Actually Catches It",
+    date: "Aug 15, 2026",
+    excerpt: "What I learned building UzBank Shield's detection engine, and how it connects to CCNA/CEH fundamentals and data analytics.",
+    tags: ["Security", "UzBank Shield"],
+    file: "posts/phishing-detection-basics.md"
+  },
+  {
+    title: "Getting Started",
+    date: "Aug 15, 2026",
+    excerpt: "How this blog works, and what belongs here.",
+    tags: ["Meta"],
+    file: "posts/getting-started.md"
+  }
+];
+
 const SOCIALS = [
   { name: "GitHub", url: "https://github.com/Phlorenci", icon: "github" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/bobur-mirzarakhimov-08a066309/", icon: "linkedin" },
-  { name: "LeetCode", url: "https://leetcode.com/u/Phlorenci/", icon: "leetcode" },
-  { name: "Instagram", url: "https://www.instagram.com/boburyrn/", icon: "instagram" }
+  { name: "Instagram", url: "https://www.instagram.com/boburyrn/", icon: "instagram" },
+  { name: "Reddit", url: "https://www.reddit.com/user/Phlorenci/", icon: "reddit" },
+  { name: "Credly", url: "https://www.credly.com/users/bobur-mirzarakhimov/", icon: "credly" },
+  { name: "Chess.com", url: "https://www.chess.com/member/phlorenci", icon: "chess" },
+  { name: "LeetCode", url: "https://leetcode.com/u/Phlorenci/", icon: "leetcode" }
 ];
 
 const PROFILE = {
