@@ -13,9 +13,11 @@ const SKILLS = [
       { name: "Git", icon: "devicon-git-plain colored" },
       { name: "Linux", icon: "devicon-linux-plain colored" },
       { name: "MATLAB", icon: "devicon-matlab-plain colored" },
-      { name: "SQL", icon: "devicon-mysql-plain colored" }
+      { name: "SQL", icon: "devicon-mysql-plain colored" },
+      { name: "Tableau", icon: "devicon-tableau-plain colored" }
     ]
   },
+  
   {
     category: "Security & Systems",
     items: [
@@ -36,10 +38,17 @@ const CERTIFICATIONS = [
   },
   {
     title: "Cybersecurity Fundamentals",
-    issuer: "IBM SkillsBuild",
+    issuer: "Cisco Networking Academy",
     date: "Aug 9, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
     icon: "assets/icon2.png"
+  },
+  {
+    title: "Data Analytics Essentials",
+    issuer: "Cisco Networking Academy",
+    date: "Aug 15, 2026",
+    link: "https://www.credly.com/users/bobur-mirzarakhimov",
+    icon: "assets/icon3.png"
   }
 ];
 
