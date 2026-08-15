@@ -406,6 +406,16 @@ main { position: relative; z-index: 1; }
   font-size: 1rem;
   line-height: 0;
 }
+.skill-icon .devicon-linux-plain {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  font-size: 0.75em;
+}
 .skill-tags li:hover {
   color: var(--text);
   border-color: var(--accent);
