@@ -9,19 +9,21 @@ const SKILLS = [
     category: "Languages & Tools",
     items: [
       { name: "Python", icon: "devicon-python-plain colored" },
-      { name: "C", icon: "devicon-c-plain colored" },
+      { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+      { name: "C", icon: "clang" },
       { name: "Git", icon: "devicon-git-plain colored" },
       { name: "Linux", icon: "devicon-linux-plain colored" },
       { name: "MATLAB", icon: "devicon-matlab-plain colored" },
       { name: "SQL", icon: "devicon-mysql-plain colored" },
-      { name: "Tableau", icon: "devicon-tableau-plain colored" }
+      { name: "Tableau", icon: "tableau" }
     ]
   },
   
   {
     category: "Security & Systems",
     items: [
-      { name: "Cybersecurity Fundamentals", icon: "shield" },
+      { name: "CCNA - Network Security (in progress)", icon: "network" },
+      { name: "CEH - Ethical Hacking (in progress)", icon: "shield" },
       { name: "Operating Systems", icon: "os" },
       { name: "Computer Networks", icon: "network" }
     ]
@@ -74,7 +76,7 @@ const SOCIALS = [
 const PROFILE = {
   avatarUrl: "assets/profilephoto.jpg", // put a path like "assets/photo.jpg" here once you have one
   name: "Bobur Mirzarakhimov",
-  tagline: "Computer Engineering Student | Cybersecurity & Systems Enthusiast",
+  tagline: "Computer Engineering and Science Student | Cybersecurity & Systems Enthusiast",
   location: "Seoul, South Korea",
   email: "boburmirzarakhimov2006@gmail.com",
   githubUsername: "Phlorenci",

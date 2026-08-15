@@ -2,7 +2,7 @@
 
 # Bobur Mirzarakhimov
 
-**Computer Engineering Student · Cybersecurity & Systems Enthusiast**
+**Computer Engineering and Science Student · Cybersecurity & Systems Enthusiast**
 
 ### [→ View Live Site](https://phlorenci.github.io/portfolio/)
 
