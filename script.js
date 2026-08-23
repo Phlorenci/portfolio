@@ -22,6 +22,15 @@ const ICONS = {
   reddit: `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.09c0-1.1-.9-2-2-2-.53 0-1 .2-1.36.53-1.34-.94-3.17-1.55-5.2-1.62l.98-3.1 2.7.63a1.5 1.5 0 1 0 .15-.98l-3.13-.73a.5.5 0 0 0-.59.34l-1.13 3.58c-2.09.05-3.98.66-5.35 1.62A1.98 1.98 0 0 0 4 12.09c0 .78.42 1.46 1.05 1.83a3.2 3.2 0 0 0-.05.55c0 2.5 3.13 4.53 7 4.53s7-2.03 7-4.53c0-.18-.02-.36-.05-.54A2 2 0 0 0 22 12.09Zm-13.5 1.5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0Zm7.44 3.02c-.86.61-2.02.87-2.94.87s-2.08-.26-2.94-.87a.4.4 0 0 1 .47-.65c.68.49 1.65.7 2.47.7s1.79-.21 2.47-.7a.4.4 0 1 1 .47.65Zm-.19-1.77a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5Z"/></svg>`,
   chess: `<svg width="18" height="18" viewBox="0 0 24 24"><text x="12" y="18" font-size="19" text-anchor="middle" fill="currentColor">♞</text></svg>`,
   credly: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5.5v6c0 5 3.4 8.7 8 9.5 4.6-.8 8-4.5 8-9.5v-6L12 2Z"/><path d="m9 12 2 2 4-4"/></svg>`,
+  packettracer: `<svg width="16" height="16" viewBox="0 0 24 24">
+    <path d="M2 6a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6Z" fill="#f5c518"/>
+    <path d="M2 6.5 10.5 12 19 6.5" stroke="#000000ff" stroke-width="1.2" fill="none"/>
+    <circle cx="8" cy="9" r="0.9" fill="#4caf50"/>
+    <circle cx="11" cy="9" r="0.9" fill="#4caf50"/>
+    <circle cx="8" cy="12" r="0.9" fill="#4caf50"/>
+    <circle cx="8" cy="15.5" r="4.4" fill="none" stroke="#ffffffff" stroke-width="1.6"/>
+    <line x1="11.3" y1="18.8" x2="15.5" y2="23" stroke="#ffffffff" stroke-width="1.8" stroke-linecap="round"/>
+  </svg>`,
 };
 
 /* =========================================================
@@ -113,7 +122,11 @@ function renderBlog() {
       <p class="blog-card-date">${post.date}</p>
       <h3>${post.title}</h3>
       <p class="blog-card-excerpt">${post.excerpt}</p>
-      <div class="project-tags">${(post.tags || []).map(t => `<span>${t}</span>`).join("")}</div>
+      <div class="project-tags">${(post.tags || []).map(t => {
+        const tag = typeof t === "string" ? { name: t } : t;
+        const icon = tag.icon ? `<span class="tag-icon">${ICONS[tag.icon] || ""}</span>` : "";
+        return `<span>${icon}${tag.name}</span>`;
+      }).join("")}</div>
     </div>
   `).join("");
 }

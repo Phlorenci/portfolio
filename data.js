@@ -88,7 +88,7 @@ const BLOG_POSTS = [
     title: "Why the Basics Are the Whole Game",
     date: "Aug 23, 2026",
     excerpt: "Finishing Networking Basics, and why DHCP, DNS, and the OSI model matter more to security than they look like they should.",
-    tags: ["Networking", "Security"],
+    tags: ["Networking", "Security", { name: "Cisco Packet Tracer", icon: "packettracer" }],
     file: "posts/networking-basics.md"
   },
   {
