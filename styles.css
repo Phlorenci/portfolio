@@ -344,11 +344,15 @@ main { position: relative; z-index: 1; }
 /* =========================================================
    ABOUT
    ========================================================= */
+.about-content { display: flex; flex-direction: column; gap: 18px; }
 .about-text {
   font-size: 1.08rem;
   color: var(--text-muted);
   max-width: 68ch;
+  margin: 0;
 }
+.about-text a { color: var(--accent); }
+.about-text a:hover { text-decoration: underline; }
 .about-text::first-letter {
   color: var(--accent);
   font-family: var(--font-mono);

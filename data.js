@@ -18,6 +18,16 @@ const SKILLS = [
       { name: "Tableau", icon: "tableau" }
     ]
   },
+
+  {
+    category: "Languages",
+    items: [
+      { name: "English", icon: "globe" },
+      { name: "Russian", icon: "globe" },
+      { name: "Korean", icon: "globe" },
+      { name: "Uzbek", icon: "globe" }
+    ]
+  },
   
   {
     category: "Security & Systems",
