@@ -78,6 +78,20 @@ const PROJECTS = [
 
 const BLOG_POSTS = [
   {
+    title: "Starting Semester Six",
+    date: "Aug 23, 2026",
+    excerpt: "New courses, a harder workload, and a specific GPA goal for this semester.",
+    tags: ["University", "Goals"],
+    file: "posts/sixth-semester-goals.md"
+  },
+  {
+    title: "Why the Basics Are the Whole Game",
+    date: "Aug 23, 2026",
+    excerpt: "Finishing Networking Basics, and why DHCP, DNS, and the OSI model matter more to security than they look like they should.",
+    tags: ["Networking", "Security"],
+    file: "posts/networking-basics.md"
+  },
+  {
     title: "Phishing, and What Actually Catches It",
     date: "Aug 15, 2026",
     excerpt: "What I learned building UzBank Shield's detection engine, and how it connects to CCNA/CEH fundamentals and data analytics.",
