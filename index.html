@@ -37,42 +37,26 @@
   </div>
 </nav>
 
-<!-- ============ HERO ============ -->
+<!-- ============ HERO / LANDING ============ -->
 <header id="hero">
-  <div class="hero-inner">
-    <div class="hero-avatar" id="hero-avatar">
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="50" cy="36" r="16" stroke="var(--accent)" stroke-width="2"/>
-      <path d="M20 86c3-18 15-28 30-28s27 10 30 28" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <div class="terminal-window">
-    <div class="terminal-bar">
-      <span class="dot"></span>
-      <span class="terminal-title">bobur@root: ~</span>
+  <div class="landing-grid">
+    <div class="landing-photo" id="landing-photo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="36" r="16" stroke="var(--accent)" stroke-width="2"/>
+        <path d="M20 86c3-18 15-28 30-28s27 10 30 28" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
     </div>
-    <div class="terminal-body">
-      
-      <h1 class="hero-name">Bobur Mirzarakhimov</h1>
-      <p class="hero-tagline">Computer Engineering and Science Student <span class="pipe">|</span> Cybersecurity &amp; Systems Enthusiast</p>
-      <p class="hero-eyebrow"><span id="typed-role"></span><span class="cursor-blink">_</span></p>
-      <div class="hero-location">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Seoul, South Korea</span>
+    <div class="landing-right">
+      <div class="landing-card landing-info-card">
+        <h1 class="landing-name">Bobur Mirzarakhimov</h1>
+        <p class="landing-position">Computer Engineering and Science Student</p>
+        <p class="landing-sphere">Cybersecurity &amp; Systems</p>
+      </div>
+      <div class="landing-card landing-quote-card">
+        <p class="landing-quote">“Success and happiness lie in the work most people avoid.”</p>
       </div>
     </div>
   </div>
-
-  <div class="hero-cta">
-    <a href="#projects" class="btn btn-primary magnetic">View Projects</a>
-    <a href="#" id="resume-btn" class="btn btn-ghost magnetic" aria-disabled="true">Download Resume</a>
-  </div>
-
-  <div class="hero-scroll-hint">
-    <span>scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</div>
 </header>
 
 <main>
@@ -81,13 +65,22 @@
 <section id="about" class="section reveal">
   <div class="section-inner">
     <p class="section-label">01 <span class="label-title">whoami</span></p>
-    <div class="about-content">
-      <p class="about-text">
-        I'm Bobur, a Computer Engineering student at Sejong University in Seoul, South Korea. I'm building a
-        foundation across cybersecurity, computer networks, operating systems, and software development — with
-        hands-on experience in Linux, Python, C, and Git. Currently exploring how systems, networks, and security
-        intersect, with a growing interest in protecting the technology we all rely on.
-      </p>
+    <div class="infobox">
+      <div class="infobox-photo" id="infobox-photo">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="36" r="16" stroke="var(--accent)" stroke-width="2"/>
+          <path d="M20 86c3-18 15-28 30-28s27 10 30 28" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h2 class="infobox-name">Bobur Mirzarakhimov</h2>
+      <p class="infobox-role">Computer Engineering &amp; Science Student</p>
+      <table class="infobox-table">
+        <tr><th>Residence</th><td>Seoul, South Korea</td></tr>
+        <tr><th>Education</th><td>Sejong University — B.S. Computer Engineering and Science</td></tr>
+        <tr><th>Fields</th><td>Cybersecurity, Systems, Software Engineering</td></tr>
+        <tr><th>Known for</th><td><a href="https://github.com/Phlorenci/UzBank-Shield" target="_blank" rel="noopener noreferrer">UzBank Shield</a></td></tr>
+        <tr><th>Website</th><td><a href="https://phlorenci.github.io/portfolio/" target="_blank" rel="noopener noreferrer">phlorenci.github.io</a></td></tr>
+      </table>
     </div>
   </div>
 </section>

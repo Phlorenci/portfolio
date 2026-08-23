@@ -183,10 +183,13 @@ function setupResumeButton() {
 }
 
 function setupAvatar() {
-  const wrap = document.getElementById("hero-avatar");
-  if (PROFILE.avatarUrl) {
-    wrap.innerHTML = `<img src="${PROFILE.avatarUrl}" alt="${PROFILE.name}">`;
-  }
+  const targets = ["landing-photo", "infobox-photo"];
+  targets.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && PROFILE.avatarUrl) {
+      el.innerHTML = `<img src="${PROFILE.avatarUrl}" alt="${PROFILE.name}">`;
+    }
+  });
 }
 
 /* =========================================================
@@ -467,12 +470,10 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCertifications();
   renderProjects();
   renderBlog();
-  renderSocials();
-  setupResumeButton();
+  renderSocials(); 
   setupAvatar();
   setupNav();
-  setupReveal();
-  setupTypewriter();
+  setupReveal(); 
   setupContactForm();
   setupCursorGlow();
   setupMagnetic();
