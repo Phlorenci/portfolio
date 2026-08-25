@@ -1,6 +1,6 @@
 # Starting Semester Six
 
-New semester at Sejong University from September till December, and this one has a noticeably different shape than the last few — less introductory theory, more courses that assume you already know how to build things and now want you to build them well.
+New fall semester at Sejong University and this one has a noticeably different shape than the last few — less introductory theory, more courses that assume you already know how to build things and now want you to build them well.
 
 ## What's on the schedule
 

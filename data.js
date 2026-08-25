@@ -61,6 +61,13 @@ const CERTIFICATIONS = [
     date: "Aug 15, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
     icon: "assets/icon3.png"
+  },
+  {
+    title: "Networking Basics",
+    issuer: "Cisco Networking Academy",
+    date: "Aug 25, 2026",
+    link: "https://www.credly.com/users/bobur-mirzarakhimov",
+    icon: "assets/icon4.png"
   }
 ];
 
