@@ -46,28 +46,36 @@ const CERTIFICATIONS = [
     issuer: "Cisco Networking Academy",
     date: "Aug 8, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon1.png"
+    icon: "assets/icon1.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Introduction to Cybersecurity course. The holder of this student-level credential has introductory knowledge of cybersecurity, including the global implications of cyber threats on industries, and why cybersecurity is a growing field.",
+    skills: ["Cyber Best Practices", "Cybersecurity", "Network Vulnerabilities", "Privacy And Data Confidentiality", "Threat Detection"]
   },
   {
     title: "Cybersecurity Fundamentals",
     issuer: "IBM SkillsBuild",
     date: "Aug 9, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon2.png"
+    icon: "assets/icon2.png",
+    desc: "This credential earner demonstrates a foundational understanding of cybersecurity concepts, objectives, and practices. This includes cyber threat groups, types of attacks, social engineering, case studies, overall security strategies, cryptography, and common approaches to incident response.",
+    skills: ["Cryptography", "Cyber Attacks", "Cybersecurity", "Cybersecurity Processes", "Cybersecurity Risk Management", "Cyber Threat Analysis", "Cyber Threat Intelligence", "Incident Response", "Information Security", "Security Strategies", "Social Engineering", "Threat Analysis", "Threat Detection", "Vulnerability Management"]
   },
   {
     title: "Data Analytics Essentials",
     issuer: "Cisco Networking Academy",
     date: "Aug 15, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon3.png"
+    icon: "assets/icon3.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Data Analytics Essentials course. The holder of this student-level credential has a broad understanding of how the data analytics process creates value from data, and can explain characteristics of data.",
+    skills: ["Dashboard", "Data Analysis", "Data Storytelling", "Data Visualization", "Excel", "SQL", "Tableau"]
   },
   {
     title: "Networking Basics",
     issuer: "Cisco Networking Academy",
     date: "Aug 25, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon4.png"
+    icon: "assets/icon4.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Networking Basics course and achieved this student-level credential. Earner has knowledge of the types of networks, how they work, how devices send and receive data, the types of network cabling, and how IP addressing functions.",
+    skills: ["Application Layer Services", "IPv4 Addresses", "Network Media", "Network Types", "Protocols Standards", "Wireless Access"]
   }
 ];
 

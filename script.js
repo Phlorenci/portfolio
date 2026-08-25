@@ -62,20 +62,18 @@ function renderCertifications() {
     grid.innerHTML = `<div class="placeholder-card"><p>No certifications listed yet.</p></div>`;
     return;
   }
-  grid.innerHTML = CERTIFICATIONS.map(cert => {
+  grid.innerHTML = CERTIFICATIONS.map((cert, i) => {
     const isImage = /\.(png|jpg|jpeg|svg|webp)$/i.test(cert.icon);
     const iconHtml = isImage
       ? `<img src="${cert.icon}" alt="${cert.title} badge">`
       : (ICONS[cert.icon] || ICONS.shield);
     return `
-      <div class="cert-card">
+      <div class="cert-card" data-index="${i}">
         <div class="cert-icon">${iconHtml}</div>
         <div class="cert-body">
           <h3>${cert.title}</h3>
           <p>${cert.issuer}${cert.date ? " · " + cert.date : ""}</p>
-          <a class="cert-link" href="${cert.link}" target="_blank" rel="noopener noreferrer">
-            View credential ${ICONS.external}
-          </a>
+          <span class="cert-hint">click for details</span>
         </div>
       </div>
     `;
@@ -476,6 +474,54 @@ function setupProjectOverlay() {
   document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
 }
 
+function setupCertOverlay() {
+  const grid = document.getElementById("certs-grid");
+  const overlay = document.getElementById("cert-overlay");
+  const closeBtn = document.getElementById("cert-overlay-close");
+  const inner = document.getElementById("cert-overlay-inner");
+
+  function open(index) {
+    const cert = CERTIFICATIONS[index];
+    const isImage = /\.(png|jpg|jpeg|svg|webp)$/i.test(cert.icon);
+    const iconHtml = isImage
+      ? `<img src="${cert.icon}" alt="${cert.title} badge">`
+      : (ICONS[cert.icon] || ICONS.shield);
+
+    inner.innerHTML = `
+      <div class="cert-overlay-icon">${iconHtml}</div>
+      <div class="cert-overlay-details">
+        <h3>${cert.title}</h3>
+        <p class="cert-overlay-issuer">${cert.issuer}${cert.date ? " · " + cert.date : ""}</p>
+        ${cert.desc ? `<p class="cert-overlay-desc">${cert.desc}</p>` : ""}
+        ${cert.skills && cert.skills.length ? `
+          <p class="meta-label">Skills Earned</p>
+          <div class="project-tags">${cert.skills.map(s => `<span>${s}</span>`).join("")}</div>
+        ` : ""}
+        <div class="project-links">
+          <a href="${cert.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on Credly →</a>
+        </div>
+      </div>
+    `;
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function close() {
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  grid.addEventListener("click", e => {
+    const card = e.target.closest(".cert-card");
+    if (card) open(Number(card.dataset.index));
+  });
+  overlay.addEventListener("click", e => { if (e.target === overlay) close(); });
+  closeBtn.addEventListener("click", close);
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+}
+
 /* =========================================================
    INIT
    ========================================================= */
@@ -493,6 +539,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMagnetic();
   setupCardGlow();
   setupProjectOverlay();
+  setupCertOverlay();
   setupBlogOverlay();
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 });
