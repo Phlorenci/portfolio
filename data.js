@@ -76,6 +76,16 @@ const CERTIFICATIONS = [
     icon: "assets/icon4.png",
     desc: "Cisco verifies the earner of this badge successfully completed the Networking Basics course and achieved this student-level credential. Earner has knowledge of the types of networks, how they work, how devices send and receive data, the types of network cabling, and how IP addressing functions.",
     skills: ["Application Layer Services", "IPv4 Addresses", "Network Media", "Network Types", "Protocols Standards", "Wireless Access"]
+  },
+
+  {
+    title: "Operating Systems Basics",
+    issuer: "Cisco Networking Academy",
+    date: "Aug 31, 2026",
+    link: "https://www.credly.com/users/bobur-mirzarakhimov",
+    icon: "assets/icon5.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Operating Systems Basics course and achieved this student-level credential. Earner has fundamental knowledge of operating systems, covering the basic concepts and skills needed to explain the purpose and characteristics of operating systems, implement basic operating system security, and configure mobile device network connectivity and email.",
+    skills: ["Android", "iOS", "Windows", "Linux", "Mobile Network Connectivity", "Operating System Security"]
   }
 ];
 
