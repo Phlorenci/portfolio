@@ -292,6 +292,21 @@ function setupTypewriter() {
   tick();
 }
 
+function setupQuoteRotator() {
+  const el = document.getElementById("landing-quote");
+  if (!el || !QUOTES.length) return;
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % QUOTES.length;
+    el.style.opacity = "0";
+    setTimeout(() => {
+      el.textContent = `"${QUOTES[index]}"`;
+      el.style.opacity = "1";
+    }, 300);
+  }, 7000);
+}
+
 /* =========================================================
    CONTACT FORM (progressive: works with Formspree if configured,
    otherwise falls back to a mailto link)
@@ -535,6 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupNav();
   setupReveal(); 
   setupContactForm();
+  setupQuoteRotator();
   setupCursorGlow();
   setupMagnetic();
   setupCardGlow();

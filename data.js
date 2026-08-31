@@ -151,3 +151,10 @@ const PROFILE = {
   githubUsername: "Phlorenci",
   resumeUrl: "" // drop a path like "assets/resume.pdf" here once you have one
 };
+
+const QUOTES = [
+  "Success and happiness lie in the work most people avoid.",
+  "Knowing the basics well is what makes advanced things possible.",
+  "The best way to understand a system is to try to break it."
+  // Add more quotes here — one string per line.
+];

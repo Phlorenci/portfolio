@@ -327,3 +327,12 @@ footer { position: relative; z-index: 1; text-align: center; padding: 32px 24px;
   .overlay-face h3 { font-size: 1.6rem; }
   .edu-card { padding: 20px; }
 }
+
+.landing-quote {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.6;
+  transition: opacity 0.3s ease;
+}
