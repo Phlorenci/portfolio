@@ -8,9 +8,10 @@ const SKILLS = [
   {
     category: "Languages & Tools",
     items: [
-      { name: "Python", icon: "devicon-python-plain colored" },
-      { name: "JavaScript", icon: "devicon-javascript-plain colored" },
       { name: "C", icon: "clang" },
+      { name: "Python", icon: "devicon-python-plain colored" },
+      { name: "Java", icon: "devicon-java-plain colored" },
+      { name: "JavaScript", icon: "devicon-javascript-plain colored" },
       { name: "Git", icon: "devicon-git-plain colored" },
       { name: "Linux", icon: "devicon-linux-plain colored" },
       { name: "MATLAB", icon: "devicon-matlab-plain colored" },
