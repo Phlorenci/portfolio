@@ -87,6 +87,16 @@ const CERTIFICATIONS = [
     icon: "assets/icon5.png",
     desc: "Cisco verifies the earner of this badge successfully completed the Operating Systems Basics course and achieved this student-level credential. Earner has fundamental knowledge of operating systems, covering the basic concepts and skills needed to explain the purpose and characteristics of operating systems, implement basic operating system security, and configure mobile device network connectivity and email.",
     skills: ["Android", "iOS", "Windows", "Linux", "Mobile Network Connectivity", "Operating System Security"]
+  },
+
+    {
+    title: "Networking Devices and Basic Configuration",
+    issuer: "Cisco Networking Academy",
+    date: "Sep 12, 2026",
+    link: "https://www.credly.com/users/bobur-mirzarakhimov",
+    icon: "assets/icon6.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Networking Devices and Basic Configuration course and achieved this student-level credential. Earner has knowledge of networking devices, addressing, and fundamental protocols used to configure and operate a network.",
+    skills: ["Cisco IOS", "ARP", "Binary Systems", "Cisco Devices", "DHCP", "DNS", "Ethernet Operates", "Hierarchical Network Design", "IPv4 Subnetting", "Network Layer Protocols", "Transport Layer Protocols", "Virtualization and Cloud Services"]
   }
 ];
 
