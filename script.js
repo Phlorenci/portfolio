@@ -549,7 +549,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupAvatar();
   setupNav();
   setupReveal(); 
-  setupContactForm();
   setupQuoteRotator();
   setupCursorGlow();
   setupMagnetic();
