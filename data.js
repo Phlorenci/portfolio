@@ -16,7 +16,8 @@ const SKILLS = [
       { name: "Linux", icon: "devicon-linux-plain colored" },
       { name: "MATLAB", icon: "devicon-matlab-plain colored" },
       { name: "SQL", icon: "devicon-mysql-plain colored" },
-      { name: "Tableau", icon: "tableau" }
+      { name: "Tableau", icon: "tableau" },
+      { name: "Cisco Packet Tracer", icon: "packettracer" }
     ]
   },
 
