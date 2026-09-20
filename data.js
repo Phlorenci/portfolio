@@ -98,6 +98,16 @@ const CERTIFICATIONS = [
     icon: "assets/icon6.png",
     desc: "Cisco verifies the earner of this badge successfully completed the Networking Devices and Basic Configuration course and achieved this student-level credential. Earner has knowledge of networking devices, addressing, and fundamental protocols used to configure and operate a network.",
     skills: ["Cisco IOS", "ARP", "Binary Systems", "Cisco Devices", "DHCP", "DNS", "Ethernet Operates", "Hierarchical Network Design", "IPv4 Subnetting", "Network Layer Protocols", "Transport Layer Protocols", "Virtualization and Cloud Services"]
+  },
+
+    {
+    title: "Endpoint Security",
+    issuer: "Cisco Networking Academy",
+    date: "Sep 20, 2026",
+    link: "https://www.credly.com/users/bobur-mirzarakhimov",
+    icon: "assets/icon7.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Endpoint Security course and achieved this student-level credential. Earner has knowledge of protecting endpoint devices and networks against malware, intrusions, and common attacks across wired, wireless, and mobile environments.",
+    skills: ["Application Security", "Antimalware Protection", "Common Cyber Threats", "Defending Systems And Devices", "Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Linux Basics", "Mitigating Common Network Attacks", "Network Security Infrastructure", "Securing WLANs", "System And Endpoint Protection", "Windows Security", "Wireless And Mobile Device Attacks"]
   }
 ];
 
