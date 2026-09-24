@@ -79,7 +79,6 @@ const CERTIFICATIONS = [
     desc: "Cisco verifies the earner of this badge successfully completed the Networking Basics course and achieved this student-level credential. Earner has knowledge of the types of networks, how they work, how devices send and receive data, the types of network cabling, and how IP addressing functions.",
     skills: ["Application Layer Services", "IPv4 Addresses", "Network Media", "Network Types", "Protocols Standards", "Wireless Access"]
   },
-
   {
     title: "Operating Systems Basics",
     issuer: "Cisco Networking Academy",
@@ -89,8 +88,7 @@ const CERTIFICATIONS = [
     desc: "Cisco verifies the earner of this badge successfully completed the Operating Systems Basics course and achieved this student-level credential. Earner has fundamental knowledge of operating systems, covering the basic concepts and skills needed to explain the purpose and characteristics of operating systems, implement basic operating system security, and configure mobile device network connectivity and email.",
     skills: ["Android", "iOS", "Windows", "Linux", "Mobile Network Connectivity", "Operating System Security"]
   },
-
-    {
+  {
     title: "Networking Devices and Basic Configuration",
     issuer: "Cisco Networking Academy",
     date: "Sep 12, 2026",
@@ -99,8 +97,7 @@ const CERTIFICATIONS = [
     desc: "Cisco verifies the earner of this badge successfully completed the Networking Devices and Basic Configuration course and achieved this student-level credential. Earner has knowledge of networking devices, addressing, and fundamental protocols used to configure and operate a network.",
     skills: ["Cisco IOS", "ARP", "Binary Systems", "Cisco Devices", "DHCP", "DNS", "Ethernet Operates", "Hierarchical Network Design", "IPv4 Subnetting", "Network Layer Protocols", "Transport Layer Protocols", "Virtualization and Cloud Services"]
   },
-
-    {
+  {
     title: "Endpoint Security",
     issuer: "Cisco Networking Academy",
     date: "Sep 20, 2026",
@@ -108,6 +105,15 @@ const CERTIFICATIONS = [
     icon: "assets/icon7.png",
     desc: "Cisco verifies the earner of this badge successfully completed the Endpoint Security course and achieved this student-level credential. Earner has knowledge of protecting endpoint devices and networks against malware, intrusions, and common attacks across wired, wireless, and mobile environments.",
     skills: ["Application Security", "Antimalware Protection", "Common Cyber Threats", "Defending Systems And Devices", "Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Linux Basics", "Mitigating Common Network Attacks", "Network Security Infrastructure", "Securing WLANs", "System And Endpoint Protection", "Windows Security", "Wireless And Mobile Device Attacks"]
+  },
+  {
+    title: "Network Defense",
+    issuer: "Cisco Networking Academy",
+    date: "Sep 24, 2026",
+    link: "https://www.credly.com/users/bobur-mirzarakhimov",
+    icon: "assets/icon8.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Network Defense course and achieved this student-level credential. Earner has knowledge of defending networks through access controls, cryptography, log analysis, and layered security policy — spanning both technical controls and physical security.",
+    skills: ["Access Controls", "Application Security", "Cloud Security", "Defense-in-Depth", "End Device Logs", "Evaluating Alerts", "Firewalls", "Hashing", "Integrity And Authenticity", "Network Hardening", "Network Logs", "Physical Security", "Public Key Cryptography", "Security Policies - Regulations - Standards", "System And Network Defense"]
   }
 ];
 
