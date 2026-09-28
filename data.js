@@ -112,8 +112,17 @@ const CERTIFICATIONS = [
     date: "Sep 24, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
     icon: "assets/icon8.png",
-    desc: "Cisco verifies the earner of this badge successfully completed the Network Defense course and achieved this student-level credential. Earner has knowledge of defending networks through access controls, cryptography, log analysis, and layered security policy — spanning both technical controls and physical security.",
+    desc: "Cisco verifies the earner of this badge successfully completed the Network Defense course. The holder of this student-level credential has a broad understanding of techniques to monitor and protect the network, including access control, firewalls, cloud security, and cryptography. They are also familiar with how to evaluate and respond to security alerts.",
     skills: ["Access Controls", "Application Security", "Cloud Security", "Defense-in-Depth", "End Device Logs", "Evaluating Alerts", "Firewalls", "Hashing", "Integrity And Authenticity", "Network Hardening", "Network Logs", "Physical Security", "Public Key Cryptography", "Security Policies - Regulations - Standards", "System And Network Defense"]
+  },
+  {
+    title: "Cyber Threat Management",
+    issuer: "Cisco Networking Academy",
+    date: "Sep 28, 2026",
+    link: "https://www.credly.com/users/bobur-mirzarakhimov",
+    icon: "assets/icon9.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Cyber Threat Management course. The holder of this student-level credential is familiar with cybersecurity policies and governance to ensure an organization complies with ethics standards and legal and regulatory frameworks. They understand how to do a network vulnerability assessment and create a risk management plan, as well as post-incident response.",
+    skills: ["Common Vulnerability Scoring System (CVSS)", "Disaster Recovery", "Evidence Handling And Attack Attribution", "Governance", "Incident Response", "Network And Server Profiling", "Penetration Testing", "Risk Assessment", "Risk Management", "Secure Device Management", "Security Assessments", "Security Controls", "The Cyber Kill Chain", "The Diamond Model Of Intrusion Analysis", "Threat Intelligence Services"]
   }
 ];
 
