@@ -50,7 +50,7 @@ const CERTIFICATIONS = [
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
     icon: "assets/icon3.png",
     desc: "Cisco verifies the earner of this badge successfully completed the Data Analytics Essentials course. The holder of this student-level credential has a broad understanding of how the data analytics process creates value from data, and can explain characteristics of data.",
-    skills: ["Dashboard", "Data Analysis", "Data Storytelling", "Data Visualization", "Excel", "SQL", "Tableau"]
+    skills: ["Data Analysis", "Data Visualization", "SQL", "Tableau", "Excel"]
   },
   {
     title: "Cybersecurity Fundamentals",
@@ -59,7 +59,7 @@ const CERTIFICATIONS = [
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
     icon: "assets/icon2.png",
     desc: "This credential earner demonstrates a foundational understanding of cybersecurity concepts, objectives, and practices. This includes cyber threat groups, types of attacks, social engineering, case studies, overall security strategies, cryptography, and common approaches to incident response.",
-    skills: ["Cryptography", "Cyber Attacks", "Cybersecurity", "Cybersecurity Processes", "Cybersecurity Risk Management", "Cyber Threat Analysis", "Cyber Threat Intelligence", "Incident Response", "Information Security", "Security Strategies", "Social Engineering", "Threat Analysis", "Threat Detection", "Vulnerability Management"]
+    skills: ["Cryptography", "Incident Response", "Vulnerability Management", "Cyber Threat Intelligence", "Social Engineering", "Cybersecurity Risk Management"]
   },
   {
     title: "Junior Cybersecurity Analyst Career Path",
@@ -68,43 +68,43 @@ const CERTIFICATIONS = [
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
     icon: "assets/icon10.png",
     desc: "Cisco verifies the earner of this badge successfully completed the Junior Cybersecurity Analyst Career Path with Cisco Networking Academy. They understand techniques to monitor and protect the network, including firewalls, cloud security, and cryptography, are familiar with security alerts and governance, and have skills to perform network vulnerability assessment and create a risk management plan, including forensic investigations and incident response planning.",
-    skills: ["Application Security", "Cloud Security", "Firewalls", "Physical Security", "Access Controls", "Antimalware Protection", "Common Cyber Threats", "Defending Systems And Devices", "Defense-in-Depth", "Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Linux Basics", "Mitigating Common Network Attacks", "Network Hardening", "Network Infrastructure Security", "Securing WLANs", "Security Policies/Regulations/Standards", "System And Endpoint Protection", "System And Network Defense", "Windows Security", "Wireless And Mobile Device Attacks"],
+    skills: ["Defense-in-Depth", "IP/TCP/UDP Vulnerabilities", "Host-based Intrusion Prevention", "Network Hardening", "Mitigating Common Network Attacks", "Cloud Security", "System And Network Defense"],
     includes: [
       {
         title: "Networking Basics",
         date: "Aug 25, 2026",
         icon: "assets/icon4.png",
-        skills: ["Application Layer Services", "IPv4 Addresses", "Network Media", "Network Types", "Protocols Standards", "Wireless Access"]
+        skills: ["IPv4 Addresses", "Protocols Standards", "Wireless Access", "Application Layer Services"]
       },
       {
         title: "Operating Systems Basics",
         date: "Aug 31, 2026",
         icon: "assets/icon5.png",
-        skills: ["Android", "iOS", "Windows", "Linux", "Mobile Network Connectivity", "Operating System Security"]
+        skills: ["Operating System Security", "Mobile Network Connectivity"]
       },
       {
         title: "Networking Devices and Basic Configuration",
         date: "Sep 12, 2026",
         icon: "assets/icon6.png",
-        skills: ["Cisco IOS", "ARP", "Binary Systems", "Cisco Devices", "DHCP", "DNS", "Ethernet Operates", "Hierarchical Network Design", "IPv4 Subnetting", "Network Layer Protocols", "Transport Layer Protocols", "Virtualization and Cloud Services"]
+        skills: ["Cisco IOS", "DHCP", "DNS", "IPv4 Subnetting", "Hierarchical Network Design", "Virtualization and Cloud Services"]
       },
       {
         title: "Endpoint Security",
         date: "Sep 20, 2026",
         icon: "assets/icon7.png",
-        skills: ["Application Security", "Antimalware Protection", "Common Cyber Threats", "Defending Systems And Devices", "Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Linux Basics", "Mitigating Common Network Attacks", "Network Security Infrastructure", "Securing WLANs", "System And Endpoint Protection", "Windows Security", "Wireless And Mobile Device Attacks"]
+        skills: ["Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Mitigating Common Network Attacks", "Network Security Infrastructure", "Antimalware Protection", "Wireless And Mobile Device Attacks"]
       },
       {
         title: "Network Defense",
         date: "Sep 24, 2026",
         icon: "assets/icon8.png",
-        skills: ["Access Controls", "Application Security", "Cloud Security", "Defense-in-Depth", "End Device Logs", "Evaluating Alerts", "Firewalls", "Hashing", "Integrity And Authenticity", "Network Hardening", "Network Logs", "Physical Security", "Public Key Cryptography", "Security Policies - Regulations - Standards", "System And Network Defense"]
+        skills: ["Defense-in-Depth", "Public Key Cryptography", "Firewalls", "Cloud Security", "Network Hardening", "System And Network Defense"]
       },
       {
         title: "Cyber Threat Management",
         date: "Sep 28, 2026",
         icon: "assets/icon9.png",
-        skills: ["Common Vulnerability Scoring System (CVSS)", "Disaster Recovery", "Evidence Handling And Attack Attribution", "Governance", "Incident Response", "Network And Server Profiling", "Penetration Testing", "Risk Assessment", "Risk Management", "Secure Device Management", "Security Assessments", "Security Controls", "The Cyber Kill Chain", "The Diamond Model Of Intrusion Analysis", "Threat Intelligence Services"]
+        skills: ["Common Vulnerability Scoring System (CVSS)", "Penetration Testing", "The Cyber Kill Chain", "The Diamond Model Of Intrusion Analysis", "Threat Intelligence Services", "Network And Server Profiling"]
       }
     ]
   }
