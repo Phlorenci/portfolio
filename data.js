@@ -69,7 +69,13 @@ const CERTIFICATIONS = [
     icon: "assets/icon10.png",
     desc: "Cisco verifies the earner of this badge successfully completed the Junior Cybersecurity Analyst Career Path with Cisco Networking Academy. They understand techniques to monitor and protect the network, including firewalls, cloud security, and cryptography, are familiar with security alerts and governance, and have skills to perform network vulnerability assessment and create a risk management plan, including forensic investigations and incident response planning.",
     skills: ["Defense-in-Depth", "IP/TCP/UDP Vulnerabilities", "Host-based Intrusion Prevention", "Network Hardening", "Mitigating Common Network Attacks", "Cloud Security", "System And Network Defense"],
-    includes: [
+      includes: [
+      {
+        title: "Introduction to Cybersecurity",
+        date: "Aug 8, 2026",
+        icon: "assets/icon1.png",
+        skills: ["Network Vulnerabilities", "Privacy And Data Confidentiality", "Threat Detection"]
+      },
       {
         title: "Networking Basics",
         date: "Aug 25, 2026",
