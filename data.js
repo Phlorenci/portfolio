@@ -74,42 +74,49 @@ const CERTIFICATIONS = [
         title: "Introduction to Cybersecurity",
         date: "Aug 8, 2026",
         icon: "assets/icon1.png",
+        desc: "Cisco verifies the earner of this badge successfully completed the Introduction to Cybersecurity course. The holder of this student-level credential has introductory knowledge of cybersecurity, including the global implications of cyber threats on industries, and why cybersecurity is a growing field.",
         skills: ["Network Vulnerabilities", "Privacy And Data Confidentiality", "Threat Detection"]
       },
       {
         title: "Networking Basics",
         date: "Aug 25, 2026",
         icon: "assets/icon4.png",
+        desc: "Cisco verifies the earner of this badge successfully completed the Networking Basics course and achieved this student-level credential. Earner has knowledge of the types of networks, how they work, how devices send and receive data, the types of network cabling, and how IP addressing functions.",
         skills: ["IPv4 Addresses", "Protocols Standards", "Wireless Access", "Application Layer Services"]
       },
       {
         title: "Operating Systems Basics",
         date: "Aug 31, 2026",
         icon: "assets/icon5.png",
+        desc: "Cisco verifies the earner of this badge successfully completed the Operating Systems Basics course and achieved this student-level credential. Earner has fundamental knowledge of operating systems, covering the basic concepts and skills needed to explain the purpose and characteristics of operating systems, implement basic operating system security, and configure mobile device network connectivity and email.",
         skills: ["Operating System Security", "Mobile Network Connectivity"]
       },
       {
         title: "Networking Devices and Basic Configuration",
         date: "Sep 12, 2026",
         icon: "assets/icon6.png",
+        desc: "Cisco verifies the earner of this badge successfully completed the Networking Devices and Basic Configuration course and achieved this student-level credential. Earner has knowledge of networking devices, addressing, and fundamental protocols used to configure and operate a network.",
         skills: ["Cisco IOS", "DHCP", "DNS", "IPv4 Subnetting", "Hierarchical Network Design", "Virtualization and Cloud Services"]
       },
       {
         title: "Endpoint Security",
         date: "Sep 20, 2026",
         icon: "assets/icon7.png",
+        desc: "Cisco verifies the earner of this badge successfully completed the Endpoint Security course and achieved this student-level credential. Earner has knowledge of protecting endpoint devices and networks against malware, intrusions, and common attacks across wired, wireless, and mobile environments.",
         skills: ["Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Mitigating Common Network Attacks", "Network Security Infrastructure", "Antimalware Protection", "Wireless And Mobile Device Attacks"]
       },
       {
         title: "Network Defense",
         date: "Sep 24, 2026",
         icon: "assets/icon8.png",
+        desc: "Cisco verifies the earner of this badge successfully completed the Network Defense course and achieved this student-level credential. Earner has knowledge of defending networks through access controls, cryptography, log analysis, and layered security policy — spanning both technical controls and physical security.",
         skills: ["Defense-in-Depth", "Public Key Cryptography", "Firewalls", "Cloud Security", "Network Hardening", "System And Network Defense"]
       },
       {
         title: "Cyber Threat Management",
         date: "Sep 28, 2026",
         icon: "assets/icon9.png",
+        desc: "Cisco verifies the earner of this badge successfully completed the Cyber Threat Management course and achieved this student-level credential. Earner has knowledge of assessing and managing cyber risk, including vulnerability scoring, penetration testing, incident response, threat intelligence, and the frameworks used to analyze intrusions, such as the Cyber Kill Chain and the Diamond Model.",
         skills: ["Common Vulnerability Scoring System (CVSS)", "Penetration Testing", "The Cyber Kill Chain", "The Diamond Model Of Intrusion Analysis", "Threat Intelligence Services", "Network And Server Profiling"]
       }
     ]

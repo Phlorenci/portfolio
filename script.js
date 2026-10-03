@@ -495,21 +495,20 @@ function setupCertOverlay() {
   const closeBtn = document.getElementById("cert-overlay-close");
   const inner = document.getElementById("cert-overlay-inner");
 
-  function open(index) {
-    const cert = CERTIFICATIONS[index];
-    const isImage = /\.(png|jpg|jpeg|svg|webp)$/i.test(cert.icon);
+  function detailHtml(data, backIndex) {
+    const isImage = /\.(png|jpg|jpeg|svg|webp)$/i.test(data.icon);
     const iconHtml = isImage
-      ? `<img src="${cert.icon}" alt="${cert.title} badge">`
-      : (ICONS[cert.icon] || ICONS.shield);
+      ? `<img src="${data.icon}" alt="${data.title} badge">`
+      : (ICONS[data.icon] || ICONS.shield);
 
-    const includesHtml = cert.includes && cert.includes.length ? `
+    const includesHtml = data.includes && data.includes.length ? `
       <p class="meta-label">Courses Included In This Path</p>
       <div class="cert-subcourses">
-        ${cert.includes.map(c => {
+        ${data.includes.map((c, i) => {
           const subIsImage = /\.(png|jpg|jpeg|svg|webp)$/i.test(c.icon);
           const subIcon = subIsImage ? `<img src="${c.icon}" alt="${c.title} badge">` : (ICONS[c.icon] || ICONS.shield);
           return `
-            <div class="cert-subcourse">
+            <div class="cert-subcourse" data-sub-index="${i}">
               <div class="cert-subcourse-icon">${subIcon}</div>
               <div class="cert-subcourse-info">
                 <h4>${c.title}</h4>
@@ -521,25 +520,40 @@ function setupCertOverlay() {
       </div>
     ` : "";
 
-    inner.innerHTML = `
+    const backBtn = backIndex !== undefined
+      ? `<button class="cert-back-btn" data-back-to="${backIndex}">← Back to Career Path</button>`
+      : "";
+
+    return `
+      ${backBtn}
       <div class="cert-overlay-icon">${iconHtml}</div>
       <div class="cert-overlay-details">
-        <h3>${cert.title}</h3>
-        <p class="cert-overlay-issuer">${cert.issuer}${cert.date ? " · " + cert.date : ""}</p>
-        ${cert.desc ? `<p class="cert-overlay-desc">${cert.desc}</p>` : ""}
-        ${cert.skills && cert.skills.length ? `
+        <h3>${data.title}</h3>
+        <p class="cert-overlay-issuer">${data.issuer || "Cisco Networking Academy"}${data.date ? " · " + data.date : ""}</p>
+        ${data.desc ? `<p class="cert-overlay-desc">${data.desc}</p>` : ""}
+        ${data.skills && data.skills.length ? `
           <p class="meta-label">Skills Earned</p>
-          <div class="project-tags">${cert.skills.map(s => `<span>${s}</span>`).join("")}</div>
+          <div class="project-tags">${data.skills.map(s => `<span>${s}</span>`).join("")}</div>
         ` : ""}
         ${includesHtml}
         <div class="project-links">
-          <a href="${cert.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on Credly →</a>
+          <a href="${data.link || CERTIFICATIONS[backIndex ?? 0].link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on Credly →</a>
         </div>
       </div>
     `;
+  }
+
+  function openMain(index) {
+    inner.innerHTML = detailHtml(CERTIFICATIONS[index]);
+    inner.dataset.certIndex = index;
     overlay.classList.add("is-open");
     overlay.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
+  }
+
+  function openSub(certIndex, subIndex) {
+    const sub = CERTIFICATIONS[certIndex].includes[subIndex];
+    inner.innerHTML = detailHtml(sub, certIndex);
   }
 
   function close() {
@@ -550,8 +564,20 @@ function setupCertOverlay() {
 
   grid.addEventListener("click", e => {
     const card = e.target.closest(".cert-card");
-    if (card) open(Number(card.dataset.index));
+    if (card) openMain(Number(card.dataset.index));
   });
+
+  inner.addEventListener("click", e => {
+    const sub = e.target.closest(".cert-subcourse");
+    if (sub) {
+      const certIndex = Number(inner.dataset.certIndex);
+      openSub(certIndex, Number(sub.dataset.subIndex));
+      return;
+    }
+    const back = e.target.closest(".cert-back-btn");
+    if (back) openMain(Number(back.dataset.backTo));
+  });
+
   overlay.addEventListener("click", e => { if (e.target === overlay) close(); });
   closeBtn.addEventListener("click", close);
   document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });

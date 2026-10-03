@@ -356,8 +356,24 @@ footer { position: relative; z-index: 1; text-align: center; padding: 32px 24px;
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 10px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
 }
+.cert-subcourse:hover { border-color: var(--accent); }
 .cert-subcourse-icon { width: 36px; height: 36px; border-radius: 6px; overflow: hidden; flex-shrink: 0; }
 .cert-subcourse-icon img { width: 100%; height: 100%; object-fit: cover; }
 .cert-subcourse-info h4 { margin: 0 0 2px; font-size: 0.88rem; color: var(--text); }
 .cert-subcourse-info p { margin: 0; font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-mono); }
+
+.cert-back-btn {
+  display: inline-block;
+  margin-bottom: 18px;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+.cert-back-btn:hover { text-decoration: underline; }
