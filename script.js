@@ -546,6 +546,7 @@ function setupCertOverlay() {
   function openMain(index) {
     inner.innerHTML = detailHtml(CERTIFICATIONS[index]);
     inner.dataset.certIndex = index;
+    inner.dataset.viewingSub = "false";
     overlay.classList.add("is-open");
     overlay.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -554,6 +555,7 @@ function setupCertOverlay() {
   function openSub(certIndex, subIndex) {
     const sub = CERTIFICATIONS[certIndex].includes[subIndex];
     inner.innerHTML = detailHtml(sub, certIndex);
+    inner.dataset.viewingSub = "true";
   }
 
   function close() {
@@ -579,7 +581,13 @@ function setupCertOverlay() {
   });
 
   overlay.addEventListener("click", e => { if (e.target === overlay) close(); });
-  closeBtn.addEventListener("click", close);
+  closeBtn.addEventListener("click", () => {
+    if (inner.dataset.viewingSub === "true") {
+      openMain(Number(inner.dataset.certIndex));
+    } else {
+      close();
+    }
+  });
   document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
 }
 
