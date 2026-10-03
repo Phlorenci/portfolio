@@ -44,15 +44,6 @@ const SKILLS = [
 
 const CERTIFICATIONS = [
   {
-    title: "Data Analytics Essentials",
-    issuer: "Cisco Networking Academy",
-    date: "Aug 15, 2026",
-    link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon3.png",
-    desc: "Cisco verifies the earner of this badge successfully completed the Data Analytics Essentials course. The holder of this student-level credential has a broad understanding of how the data analytics process creates value from data, and can explain characteristics of data.",
-    skills: ["Data Analysis", "Data Visualization", "SQL", "Tableau", "Excel"]
-  },
-  {
     title: "Cybersecurity Fundamentals",
     issuer: "IBM SkillsBuild",
     date: "Aug 9, 2026",
@@ -60,6 +51,15 @@ const CERTIFICATIONS = [
     icon: "assets/icon2.png",
     desc: "This credential earner demonstrates a foundational understanding of cybersecurity concepts, objectives, and practices. This includes cyber threat groups, types of attacks, social engineering, case studies, overall security strategies, cryptography, and common approaches to incident response.",
     skills: ["Cryptography", "Incident Response", "Vulnerability Management", "Cyber Threat Intelligence", "Social Engineering", "Cybersecurity Risk Management"]
+  },
+  {
+    title: "Data Analytics Essentials",
+    issuer: "Cisco Networking Academy",
+    date: "Aug 15, 2026",
+    link: "https://www.credly.com/users/bobur-mirzarakhimov",
+    icon: "assets/icon3.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Data Analytics Essentials course. The holder of this student-level credential has a broad understanding of how the data analytics process creates value from data, and can explain characteristics of data.",
+    skills: ["Data Analysis", "Data Visualization", "SQL", "Tableau", "Excel"]
   },
   {
     title: "Junior Cybersecurity Analyst Career Path",
