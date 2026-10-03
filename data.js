@@ -44,13 +44,13 @@ const SKILLS = [
 
 const CERTIFICATIONS = [
   {
-    title: "Introduction to Cybersecurity",
+    title: "Data Analytics Essentials",
     issuer: "Cisco Networking Academy",
-    date: "Aug 8, 2026",
+    date: "Aug 15, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon1.png",
-    desc: "Cisco verifies the earner of this badge successfully completed the Introduction to Cybersecurity course. The holder of this student-level credential has introductory knowledge of cybersecurity, including the global implications of cyber threats on industries, and why cybersecurity is a growing field.",
-    skills: ["Cyber Best Practices", "Cybersecurity", "Network Vulnerabilities", "Privacy And Data Confidentiality", "Threat Detection"]
+    icon: "assets/icon3.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Data Analytics Essentials course. The holder of this student-level credential has a broad understanding of how the data analytics process creates value from data, and can explain characteristics of data.",
+    skills: ["Dashboard", "Data Analysis", "Data Storytelling", "Data Visualization", "Excel", "SQL", "Tableau"]
   },
   {
     title: "Cybersecurity Fundamentals",
@@ -62,76 +62,51 @@ const CERTIFICATIONS = [
     skills: ["Cryptography", "Cyber Attacks", "Cybersecurity", "Cybersecurity Processes", "Cybersecurity Risk Management", "Cyber Threat Analysis", "Cyber Threat Intelligence", "Incident Response", "Information Security", "Security Strategies", "Social Engineering", "Threat Analysis", "Threat Detection", "Vulnerability Management"]
   },
   {
-    title: "Data Analytics Essentials",
-    issuer: "Cisco Networking Academy",
-    date: "Aug 15, 2026",
-    link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon3.png",
-    desc: "Cisco verifies the earner of this badge successfully completed the Data Analytics Essentials course. The holder of this student-level credential has a broad understanding of how the data analytics process creates value from data, and can explain characteristics of data.",
-    skills: ["Dashboard", "Data Analysis", "Data Storytelling", "Data Visualization", "Excel", "SQL", "Tableau"]
-  },
-  {
-    title: "Networking Basics",
-    issuer: "Cisco Networking Academy",
-    date: "Aug 25, 2026",
-    link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon4.png",
-    desc: "Cisco verifies the earner of this badge successfully completed the Networking Basics course and achieved this student-level credential. Earner has knowledge of the types of networks, how they work, how devices send and receive data, the types of network cabling, and how IP addressing functions.",
-    skills: ["Application Layer Services", "IPv4 Addresses", "Network Media", "Network Types", "Protocols Standards", "Wireless Access"]
-  },
-  {
-    title: "Operating Systems Basics",
-    issuer: "Cisco Networking Academy",
-    date: "Aug 31, 2026",
-    link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon5.png",
-    desc: "Cisco verifies the earner of this badge successfully completed the Operating Systems Basics course and achieved this student-level credential. Earner has fundamental knowledge of operating systems, covering the basic concepts and skills needed to explain the purpose and characteristics of operating systems, implement basic operating system security, and configure mobile device network connectivity and email.",
-    skills: ["Android", "iOS", "Windows", "Linux", "Mobile Network Connectivity", "Operating System Security"]
-  },
-  {
-    title: "Networking Devices and Basic Configuration",
-    issuer: "Cisco Networking Academy",
-    date: "Sep 12, 2026",
-    link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon6.png",
-    desc: "Cisco verifies the earner of this badge successfully completed the Networking Devices and Basic Configuration course and achieved this student-level credential. Earner has knowledge of networking devices, addressing, and fundamental protocols used to configure and operate a network.",
-    skills: ["Cisco IOS", "ARP", "Binary Systems", "Cisco Devices", "DHCP", "DNS", "Ethernet Operates", "Hierarchical Network Design", "IPv4 Subnetting", "Network Layer Protocols", "Transport Layer Protocols", "Virtualization and Cloud Services"]
-  },
-  {
-    title: "Endpoint Security",
-    issuer: "Cisco Networking Academy",
-    date: "Sep 20, 2026",
-    link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon7.png",
-    desc: "Cisco verifies the earner of this badge successfully completed the Endpoint Security course and achieved this student-level credential. Earner has knowledge of protecting endpoint devices and networks against malware, intrusions, and common attacks across wired, wireless, and mobile environments.",
-    skills: ["Application Security", "Antimalware Protection", "Common Cyber Threats", "Defending Systems And Devices", "Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Linux Basics", "Mitigating Common Network Attacks", "Network Security Infrastructure", "Securing WLANs", "System And Endpoint Protection", "Windows Security", "Wireless And Mobile Device Attacks"]
-  },
-  {
-    title: "Network Defense",
-    issuer: "Cisco Networking Academy",
-    date: "Sep 24, 2026",
-    link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon8.png",
-    desc: "Cisco verifies the earner of this badge successfully completed the Network Defense course. The holder of this student-level credential has a broad understanding of techniques to monitor and protect the network, including access control, firewalls, cloud security, and cryptography. They are also familiar with how to evaluate and respond to security alerts.",
-    skills: ["Access Controls", "Application Security", "Cloud Security", "Defense-in-Depth", "End Device Logs", "Evaluating Alerts", "Firewalls", "Hashing", "Integrity And Authenticity", "Network Hardening", "Network Logs", "Physical Security", "Public Key Cryptography", "Security Policies - Regulations - Standards", "System And Network Defense"]
-  },
-  {
-    title: "Cyber Threat Management",
-    issuer: "Cisco Networking Academy",
-    date: "Sep 28, 2026",
-    link: "https://www.credly.com/users/bobur-mirzarakhimov",
-    icon: "assets/icon9.png",
-    desc: "Cisco verifies the earner of this badge successfully completed the Cyber Threat Management course. The holder of this student-level credential is familiar with cybersecurity policies and governance to ensure an organization complies with ethics standards and legal and regulatory frameworks. They understand how to do a network vulnerability assessment and create a risk management plan, as well as post-incident response.",
-    skills: ["Common Vulnerability Scoring System (CVSS)", "Disaster Recovery", "Evidence Handling And Attack Attribution", "Governance", "Incident Response", "Network And Server Profiling", "Penetration Testing", "Risk Assessment", "Risk Management", "Secure Device Management", "Security Assessments", "Security Controls", "The Cyber Kill Chain", "The Diamond Model Of Intrusion Analysis", "Threat Intelligence Services"]
-  },
-  {
     title: "Junior Cybersecurity Analyst Career Path",
     issuer: "Cisco Networking Academy",
     date: "Oct 3, 2026",
     link: "https://www.credly.com/users/bobur-mirzarakhimov",
     icon: "assets/icon10.png",
     desc: "Cisco verifies the earner of this badge successfully completed the Junior Cybersecurity Analyst Career Path with Cisco Networking Academy. They understand techniques to monitor and protect the network, including firewalls, cloud security, and cryptography, are familiar with security alerts and governance, and have skills to perform network vulnerability assessment and create a risk management plan, including forensic investigations and incident response planning.",
-    skills: ["Application Security", "Cloud Security", "Firewalls", "Physical Security", "Access Controls", "Antimalware Protection", "Common Cyber Threats", "Defending Systems And Devices", "Defense-in-Depth", "Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Linux Basics", "Mitigating Common Network Attacks", "Network Hardening", "Network Infrastructure Security", "Securing WLANs", "Security Policies/Regulations/Standards", "System And Endpoint Protection", "System And Network Defense", "Windows Security", "Wireless And Mobile Device Attacks"]
+    skills: ["Application Security", "Cloud Security", "Firewalls", "Physical Security", "Access Controls", "Antimalware Protection", "Common Cyber Threats", "Defending Systems And Devices", "Defense-in-Depth", "Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Linux Basics", "Mitigating Common Network Attacks", "Network Hardening", "Network Infrastructure Security", "Securing WLANs", "Security Policies/Regulations/Standards", "System And Endpoint Protection", "System And Network Defense", "Windows Security", "Wireless And Mobile Device Attacks"],
+    includes: [
+      {
+        title: "Networking Basics",
+        date: "Aug 25, 2026",
+        icon: "assets/icon4.png",
+        skills: ["Application Layer Services", "IPv4 Addresses", "Network Media", "Network Types", "Protocols Standards", "Wireless Access"]
+      },
+      {
+        title: "Operating Systems Basics",
+        date: "Aug 31, 2026",
+        icon: "assets/icon5.png",
+        skills: ["Android", "iOS", "Windows", "Linux", "Mobile Network Connectivity", "Operating System Security"]
+      },
+      {
+        title: "Networking Devices and Basic Configuration",
+        date: "Sep 12, 2026",
+        icon: "assets/icon6.png",
+        skills: ["Cisco IOS", "ARP", "Binary Systems", "Cisco Devices", "DHCP", "DNS", "Ethernet Operates", "Hierarchical Network Design", "IPv4 Subnetting", "Network Layer Protocols", "Transport Layer Protocols", "Virtualization and Cloud Services"]
+      },
+      {
+        title: "Endpoint Security",
+        date: "Sep 20, 2026",
+        icon: "assets/icon7.png",
+        skills: ["Application Security", "Antimalware Protection", "Common Cyber Threats", "Defending Systems And Devices", "Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Linux Basics", "Mitigating Common Network Attacks", "Network Security Infrastructure", "Securing WLANs", "System And Endpoint Protection", "Windows Security", "Wireless And Mobile Device Attacks"]
+      },
+      {
+        title: "Network Defense",
+        date: "Sep 24, 2026",
+        icon: "assets/icon8.png",
+        skills: ["Access Controls", "Application Security", "Cloud Security", "Defense-in-Depth", "End Device Logs", "Evaluating Alerts", "Firewalls", "Hashing", "Integrity And Authenticity", "Network Hardening", "Network Logs", "Physical Security", "Public Key Cryptography", "Security Policies - Regulations - Standards", "System And Network Defense"]
+      },
+      {
+        title: "Cyber Threat Management",
+        date: "Sep 28, 2026",
+        icon: "assets/icon9.png",
+        skills: ["Common Vulnerability Scoring System (CVSS)", "Disaster Recovery", "Evidence Handling And Attack Attribution", "Governance", "Incident Response", "Network And Server Profiling", "Penetration Testing", "Risk Assessment", "Risk Management", "Secure Device Management", "Security Assessments", "Security Controls", "The Cyber Kill Chain", "The Diamond Model Of Intrusion Analysis", "Threat Intelligence Services"]
+      }
+    ]
   }
 ];
 

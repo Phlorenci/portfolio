@@ -502,6 +502,25 @@ function setupCertOverlay() {
       ? `<img src="${cert.icon}" alt="${cert.title} badge">`
       : (ICONS[cert.icon] || ICONS.shield);
 
+    const includesHtml = cert.includes && cert.includes.length ? `
+      <p class="meta-label">Courses Included In This Path</p>
+      <div class="cert-subcourses">
+        ${cert.includes.map(c => {
+          const subIsImage = /\.(png|jpg|jpeg|svg|webp)$/i.test(c.icon);
+          const subIcon = subIsImage ? `<img src="${c.icon}" alt="${c.title} badge">` : (ICONS[c.icon] || ICONS.shield);
+          return `
+            <div class="cert-subcourse">
+              <div class="cert-subcourse-icon">${subIcon}</div>
+              <div class="cert-subcourse-info">
+                <h4>${c.title}</h4>
+                <p>${c.date} · ${c.skills.length} skills</p>
+              </div>
+            </div>
+          `;
+        }).join("")}
+      </div>
+    ` : "";
+
     inner.innerHTML = `
       <div class="cert-overlay-icon">${iconHtml}</div>
       <div class="cert-overlay-details">
@@ -512,6 +531,7 @@ function setupCertOverlay() {
           <p class="meta-label">Skills Earned</p>
           <div class="project-tags">${cert.skills.map(s => `<span>${s}</span>`).join("")}</div>
         ` : ""}
+        ${includesHtml}
         <div class="project-links">
           <a href="${cert.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on Credly →</a>
         </div>

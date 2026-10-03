@@ -342,3 +342,22 @@ footer { position: relative; z-index: 1; text-align: center; padding: 32px 24px;
   gap: 14px;
 }
 .landing-socials-card .email-link { font-size: 0.82rem; }
+.cert-subcourses {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.cert-subcourse {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.cert-subcourse-icon { width: 36px; height: 36px; border-radius: 6px; overflow: hidden; flex-shrink: 0; }
+.cert-subcourse-icon img { width: 100%; height: 100%; object-fit: cover; }
+.cert-subcourse-info h4 { margin: 0 0 2px; font-size: 0.88rem; color: var(--text); }
+.cert-subcourse-info p { margin: 0; font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-mono); }
