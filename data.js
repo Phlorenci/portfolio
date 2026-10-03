@@ -123,6 +123,15 @@ const CERTIFICATIONS = [
     icon: "assets/icon9.png",
     desc: "Cisco verifies the earner of this badge successfully completed the Cyber Threat Management course. The holder of this student-level credential is familiar with cybersecurity policies and governance to ensure an organization complies with ethics standards and legal and regulatory frameworks. They understand how to do a network vulnerability assessment and create a risk management plan, as well as post-incident response.",
     skills: ["Common Vulnerability Scoring System (CVSS)", "Disaster Recovery", "Evidence Handling And Attack Attribution", "Governance", "Incident Response", "Network And Server Profiling", "Penetration Testing", "Risk Assessment", "Risk Management", "Secure Device Management", "Security Assessments", "Security Controls", "The Cyber Kill Chain", "The Diamond Model Of Intrusion Analysis", "Threat Intelligence Services"]
+  },
+  {
+    title: "Junior Cybersecurity Analyst Career Path",
+    issuer: "Cisco Networking Academy",
+    date: "Oct 3, 2026",
+    link: "https://www.credly.com/users/bobur-mirzarakhimov",
+    icon: "assets/icon10.png",
+    desc: "Cisco verifies the earner of this badge successfully completed the Junior Cybersecurity Analyst Career Path with Cisco Networking Academy. They understand techniques to monitor and protect the network, including firewalls, cloud security, and cryptography, are familiar with security alerts and governance, and have skills to perform network vulnerability assessment and create a risk management plan, including forensic investigations and incident response planning.",
+    skills: ["Application Security", "Cloud Security", "Firewalls", "Physical Security", "Access Controls", "Antimalware Protection", "Common Cyber Threats", "Defending Systems And Devices", "Defense-in-Depth", "Host-based Intrusion Prevention", "IP/TCP/UDP Vulnerabilities", "Linux Basics", "Mitigating Common Network Attacks", "Network Hardening", "Network Infrastructure Security", "Securing WLANs", "Security Policies/Regulations/Standards", "System And Endpoint Protection", "System And Network Defense", "Windows Security", "Wireless And Mobile Device Attacks"]
   }
 ];
 
